@@ -47,6 +47,9 @@ ch.setFormatter(formatter)
 if not os.path.exists('logs'):
     os.makedirs('logs') 
 
+if not os.path.exists('tmp'):
+    os.makedirs('tmp') 
+
 fh = logging.FileHandler('logs/awscenvironment.log')
 fh.setLevel(logging.DEBUG)
 fh.setFormatter(formatter)
@@ -155,6 +158,7 @@ class Environment():
         f = open( filename,"w")
         f.write(self.template.to_json())
         f.close()
+
 
 
 def main():
